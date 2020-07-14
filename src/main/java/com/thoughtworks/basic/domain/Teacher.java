@@ -3,7 +3,10 @@ package com.thoughtworks.basic.domain;
 public class Teacher extends Person{
     private String job;
 
-    public Teacher(String name, int age ,String job) {
+    public Teacher() {
+    }
+
+    public Teacher(String name, int age , String job) {
         super(name, age);
         this.job = job;
     }
