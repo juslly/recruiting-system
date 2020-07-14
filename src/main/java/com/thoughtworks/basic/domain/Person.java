@@ -4,8 +4,8 @@ public class Person {
     private String name;
     private int age;
 
-    public void introduce(){
-        System.out.println("My name is Tom. I am 21 years old.");
+    public String introduce(){
+        return "My name is Tom. I am 21 years old.";
     }
 
     public String getName() {
