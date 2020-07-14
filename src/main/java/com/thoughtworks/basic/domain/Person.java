@@ -4,8 +4,8 @@ public class Person {
     private String name;
     private int age;
 
-    public String introduce(){
-        return "My name is Tom. I am 21 years old.";
+    public String introduce(String name,int age){
+        return "My name is " + name + ". I am " + age + " years old.";
     }
 
     public String getName() {
@@ -21,6 +21,11 @@ public class Person {
     }
 
     public void setAge(int age) {
+        this.age = age;
+    }
+
+    public Person(String name, int age) {
+        this.name = name;
         this.age = age;
     }
 }

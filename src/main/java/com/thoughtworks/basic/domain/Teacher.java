@@ -3,8 +3,13 @@ package com.thoughtworks.basic.domain;
 public class Teacher extends Person{
     private String job;
 
-    public String introduce(){
-        return "My name is Matt. I am 30 years old. I am a Teacher.";
+    public Teacher(String name, int age ,String job) {
+        super(name, age);
+        this.job = job;
+    }
+
+    public String introduce(String name, int age ,String job){
+        return "My name is " + name + ". I am " + age + " years old. I am a " + job + ".";
     }
 
     public String getJob() {
