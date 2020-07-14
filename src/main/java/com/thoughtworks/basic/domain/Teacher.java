@@ -1,6 +1,9 @@
 package com.thoughtworks.basic.domain;
 
-public class Teacher extends Person{
+import com.thoughtworks.basic.service.MyObserverable;
+import com.thoughtworks.basic.service.Observer;
+
+public class Teacher extends Person implements Observer {
     private String job;
 
     public Teacher() {
@@ -21,5 +24,15 @@ public class Teacher extends Person{
 
     public void setJob(String job) {
         this.job = job;
+    }
+
+    @Override
+    public String update(String name, int age, int klass) {
+        return "My name is " + name + ". I am " + age + " years old. I am a student of Class " + klass + " now.";
+    }
+
+    @Override
+    public String receive(String message) {
+        return message;
     }
 }

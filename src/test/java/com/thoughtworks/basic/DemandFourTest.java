@@ -21,8 +21,11 @@ public class DemandFourTest {
         MyObserverable myObserverable = changeInfoStudent;
         Observer receiveInfoStudent1 = new Student("juslly",18,classDTO);
         Observer receiveInfoStudent2 = new Student("liuliu",18,classDTO);
+        Observer receiveInfoTeacher = new Teacher();
         myObserverable.addObserver(receiveInfoStudent1);
         myObserverable.addObserver(receiveInfoStudent2);
+        myObserverable.addObserver(receiveInfoTeacher);
+
 
         //when
         changeInfoStudent.setName("changeTom");
@@ -30,10 +33,12 @@ public class DemandFourTest {
         String noticeMessage = changeInfoStudent.notice(changeInfoStudent.getName(),changeInfoStudent.getAge(),changeInfoStudent.getClassDTO().getKlass());
         String receiveResult1 = receiveInfoStudent1.receive(noticeMessage);
         String receiveResult2 = receiveInfoStudent2.receive(noticeMessage);
+        String receiveResult3 = receiveInfoTeacher.receive(noticeMessage);
         //then
         Assert.assertEquals(noticeMessage ,"My name is changeTom. I am 21 years old. I am a student of Class 2 now.");
         Assert.assertEquals(receiveResult1,"My name is changeTom. I am 21 years old. I am a student of Class 2 now.");
         Assert.assertEquals(receiveResult2,"My name is changeTom. I am 21 years old. I am a student of Class 2 now.");
+        Assert.assertEquals(receiveResult3,"My name is changeTom. I am 21 years old. I am a student of Class 2 now.");
 
     }
 }

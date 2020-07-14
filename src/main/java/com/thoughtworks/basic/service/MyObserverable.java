@@ -7,4 +7,5 @@ public interface MyObserverable {
      void removeObserver(Observer observer);
      //通知观察者
      String notice(String name,int age,int klass);
+     String update(String name, int age,int klass);
 }
